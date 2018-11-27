@@ -1,0 +1,15 @@
+version: '2'
+services:
+    elasticsearch:
+        container_name: elasticsearch-2x
+        image: elasticsearch:2.4.1
+        volumes:
+            - ./esdata-2x/:/usr/share/elasticsearch/data/
+        ports:
+            - 9200:9200
+            - 9300:9300
+    kibana:
+        container_name: kibana-4x
+        image: kibana:4
+        ports:
+            - 5601:5601

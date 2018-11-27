@@ -1,0 +1,17 @@
+version: '2.2'
+services:
+    elasticsearch:
+        container_name: elasticsearch-latest
+        image: docker.elastic.co/elasticsearch/elasticsearch:6.4.0
+        volumes:
+            - ./esdata-latest/:/usr/share/elasticsearch/data/
+        ports:
+            - 9200:9200
+            - 9300:9300
+        restart: always
+    kibana:
+        container_name: kibana-latest
+        image: docker.elastic.co/kibana/kibana:6.4.1
+        ports:
+            - 5601:5601
+        restart: always

@@ -1,0 +1,16 @@
+version: '2'
+services:
+    elasticsearch:
+        container_name: elasticsearch
+        image: elasticsearch:2.4.1
+        # UNCOMMENT BELOW LINES TO HAVE PERSISTAN STORAGE
+        volumes:
+            - ./esdata/:/usr/share/elasticsearch/data/
+        ports:
+            - 9200:9200
+            - 9300:9300
+    kibana:
+        container_name: kibana
+        image: kibana:4
+        ports:
+            - 5601:5601
